@@ -14,9 +14,8 @@ layout: base
 				<article class="column is-half content">
 					<h2 class="title is-size-2" id="support-luanti">{{ "Support Luanti" | i18n }}</h2>
 					<p>
-						{{ "Luanti is a member of Open Collective Europe, a non-profit based in Belgium." | i18n }}
-						{{ "It is equivalent to a US 501(c)3 non-profit for public benefit." | i18n }}
 						{{ "You can donate to Luanti's non-profit collective to help support and grow the project. " | i18n }}
+						{{ "Luanti is a member of Open Source Europe (OSE), a non-profit based in Belgium." | i18n }}
 					</p>
 					<p>
 						{{ "We use the Open Collective platform to collect donations." | i18n }}
@@ -41,10 +40,14 @@ layout: base
 								<i class="fas fa-info-circle has-text-grey-light" title="{{ goal.description | i18n }}"></i>
 								{% endif %}
 								-
-								€ {{ goal.value | at_most: goal.target }} / € {{ goal.target}} {{ goal.suffix }}
+								€ {{ goal.value }} / € {{ goal.target}} {{ goal.suffix }}
+								{% if goal.value >= goal.target %}
+									<i class="fas fa-check ml-2 has-text-primary"></i>
+								{% endif %}
+
 							</label>
-							<progress id="progress-{{ goal.id }}" class="progress is-primary" value="{{ goal.value | at_most: goal.target }}" max="{{ goal.target }}">
-								€ {{ goal.value | at_most: goal.target }} / € {{ goal.target}} {{ goal.suffix }}
+							<progress id="progress-{{ goal.id }}" class="progress is-primary" value="{{ goal.value }}" max="{{ goal.target }}">
+								€ {{ goal.value }} / € {{ goal.target}} {{ goal.suffix }}
 							</progress>
 						</div>
 					{% endfor %}
