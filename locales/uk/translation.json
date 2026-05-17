@@ -305,5 +305,12 @@
 	"Or compile from ports at:": "Або скомпілюйте з портів у:",
 	"Goals": "Цілі",
 	"Infrastructure": "Інфраструктура",
-	"FOSDEM": "FOSDEM"
+	"FOSDEM": "FOSDEM",
+	"Part-time dev": "Розробник на неповну ставку",
+	"Full-time dev": "Розробник на повну ставку",
+	"Outreach": "Аутрич",
+	"The costs to keep Luanti running - websites and services": "Вартість того, щоб продовжити розвиток Luanti - вебсайтів та сервісів",
+	"Help us hire a developer to work on the engine part time": "Допоможіть нам найняти розробника рушія на неповну ставку",
+	"Every year, we run a stand at the world's largest open source conference": "Кожного року ми маємо стенд на найбільшій у світі конференції відкритого коду",
+	"We'd like to have some budget available to attend smaller events": "Ми б були раді мати бюджет на відвідання менших заходів"
 }
