@@ -33,6 +33,8 @@ layout: base
 				<article class="column is-half content">
 					<h2 class="title is-size-2" id="goals">{{ "Goals" | i18n }}</h2>
 					{% for goal in opencollective_goals %}
+						{% assign value = "€ " | append: goal.value %}
+						{% assign target = "€ " | append: goal.target %}
 						<div class="mb-2">
 							<label class="is-block mb-1" for="progress-{{ goal.id }}">
 								<strong>{{ goal.title | i18n }}</strong>
@@ -40,16 +42,15 @@ layout: base
 								<i class="fas fa-info-circle has-text-grey-light ml-1" title="{{ goal.description | i18n }}"></i>
 								{% endif %}
 								<span class="mx-3 has-text-grey-light">&dash;</span>
-								<span class="">
+								<span>
 									{{ goal.progressSummary | i18n: "value", value, "target", target }}
 								</span>
 								{% if goal.value >= goal.target %}
 									<i class="fas fa-check has-text-primary ml-2"></i>
 								{% endif %}
-
 							</label>
 							<progress id="progress-{{ goal.id }}" class="progress is-primary" value="{{ goal.value }}" max="{{ goal.target }}">
-								€ {{ goal.value }} / € {{ goal.target}} {{ goal.suffix }}
+								{{ goal.progressSummary | i18n: "value", value, "target", target }}
 							</progress>
 						</div>
 					{% endfor %}
