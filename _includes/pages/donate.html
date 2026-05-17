@@ -37,12 +37,14 @@ layout: base
 							<label class="is-block mb-1" for="progress-{{ goal.id }}">
 								<strong>{{ goal.title | i18n }}</strong>
 								{% if goal.description %}
-								<i class="fas fa-info-circle has-text-grey-light" title="{{ goal.description | i18n }}"></i>
+								<i class="fas fa-info-circle has-text-grey-light ml-1" title="{{ goal.description | i18n }}"></i>
 								{% endif %}
-								-
-								€ {{ goal.value }} / € {{ goal.target}} {{ goal.suffix }}
+								<span class="mx-3 has-text-grey-light">&dash;</span>
+								<span class="">
+									€ {{ goal.value }} / € {{ goal.target}} {{ goal.suffix }}
+								</span>
 								{% if goal.value >= goal.target %}
-									<i class="fas fa-check ml-2 has-text-primary"></i>
+									<i class="fas fa-check has-text-primary ml-2"></i>
 								{% endif %}
 
 							</label>
