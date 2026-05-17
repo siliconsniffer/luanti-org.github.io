@@ -41,22 +41,36 @@ export default async function () {
 	}
 
 	const data = (await req.json()).data;
-	let monthlyBudget = data.collective.stats.yearlyBudget.value / 12;
-	let balance = data.collective.stats.balance.value;
-	return data.collective.settings.goals.map(goal => {
-		const value = Math.min(goal.type === "monthlyBudget" ? monthlyBudget : balance, goal.amount / 100);
+	let monthlyBudgetAvailable = data.collective.stats.yearlyBudget.value / 12;
+	let monthlyTarget = 0;
+	let balanceAvailable = data.collective.stats.balance.value;
+
+	function getValueTarget(goal) {
 		if (goal.type === "monthlyBudget") {
-			monthlyBudget -= value;
+			const target = goal.amount / 100 - monthlyTarget;
+			const value = Math.min(monthlyBudgetAvailable, target);
+			monthlyBudgetAvailable -= value;
+			monthlyTarget = goal.amount / 100;
+			return [value, target, "per month"];
 		} else {
-			balance -= value;
+			const target = goal.amount / 100;
+			const value = Math.min(balanceAvailable, target);
+			balanceAvailable -= value;
+			return [value, target, "raised"];
 		}
-		return {
-			id: goal.key,
-			title: goal.title,
-			description: goal.description,
-			value: Math.round(value),
-			target: Math.round(goal.amount / 100),
-			suffix: goal.type === "monthlyBudget" ? "per month" : "raised",
-		};
-	});
+	}
+
+	return data.collective.settings.goals
+		.sort((a, b) => a.amount - b.amount)
+		.map(goal => {
+			const [value, target, suffix] = getValueTarget(goal);
+			return {
+				id: goal.key,
+				title: goal.title,
+				description: goal.description,
+				value: Math.round(value),
+				target: Math.round(target),
+				suffix,
+			};
+		});
 }
