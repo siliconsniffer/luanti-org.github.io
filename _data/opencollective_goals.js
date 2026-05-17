@@ -51,26 +51,26 @@ export default async function () {
 			const value = Math.min(monthlyBudgetAvailable, target);
 			monthlyBudgetAvailable -= value;
 			monthlyTarget = goal.amount / 100;
-			return [value, target, "per month"];
+			return [value, target, "[[value]] / [[target]] per month"];
 		} else {
 			const target = goal.amount / 100;
 			const value = Math.min(balanceAvailable, target);
 			balanceAvailable -= value;
-			return [value, target, "raised"];
+			return [value, target, "[[value]] / [[target]] raised"];
 		}
 	}
 
 	return data.collective.settings.goals
 		.sort((a, b) => a.amount - b.amount)
 		.map(goal => {
-			const [value, target, suffix] = getValueTarget(goal);
+			const [value, target, progressSummary] = getValueTarget(goal);
 			return {
 				id: goal.key,
 				title: goal.title,
 				description: goal.description,
 				value: Math.round(value),
 				target: Math.round(target),
-				suffix,
+				progressSummary,
 			};
 		});
 }

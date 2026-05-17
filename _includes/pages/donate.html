@@ -41,7 +41,7 @@ layout: base
 								{% endif %}
 								<span class="mx-3 has-text-grey-light">&dash;</span>
 								<span class="">
-									€ {{ goal.value }} / € {{ goal.target}} {{ goal.suffix }}
+									{{ goal.progressSummary | i18n: "value", value, "target", target }}
 								</span>
 								{% if goal.value >= goal.target %}
 									<i class="fas fa-check has-text-primary ml-2"></i>
