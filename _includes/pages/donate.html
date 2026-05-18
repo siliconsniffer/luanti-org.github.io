@@ -32,7 +32,7 @@ layout: base
 				</article>
 				<article class="column is-half content">
 					<h2 class="title is-size-2" id="goals">{{ "Goals" | i18n }}</h2>
-					{% for goal in opencollective_goals %}
+					{% for goal in opencollective_goals.goals %}
 						{% assign value = "€ " | append: goal.value %}
 						{% assign target = "€ " | append: goal.target %}
 						<div class="mb-2">
@@ -54,6 +54,10 @@ layout: base
 							</progress>
 						</div>
 					{% endfor %}
+					{% assign budget = "€ " | append: opencollective_goals.budget %}
+					<p class="is-size-7">
+						{{ "Estimated monthly income of [[amount]] based on active recurring supporters and the last 3 months of donations" | i18n: "amount", budget }}
+					</p>
 				</article>
 			</div>
 		</div>
