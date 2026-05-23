@@ -294,5 +294,22 @@
 	"Need a print version of this page? See the \"Luanti in Education\" leaflet.": "Butuh versi cetak halaman ini? Lihat brosur \"Luanti dalam Pendidikan\".",
 	"\"Luanti in Education\" leaflet": "Brosur \"Luanti dalam Pendidikan\"",
 	"Translate this site using Weblate": "Terjemahkan situs ini menggunakan Weblate",
-	"Create posters, art, and video trailers for Luanti or its games, and <a href='/press/'>share them</a>.": "Buat poster, karya seni, dan trailer video untuk Luanti atau game-nya, dan <a href='/press/'>bagikan</a>."
+	"Create posters, art, and video trailers for Luanti or its games, and <a href='/press/'>share them</a>.": "Buat poster, karya seni, dan trailer video untuk Luanti atau game-nya, dan <a href='/press/'>bagikan</a>.",
+	"Goals": "Tujuan",
+	"Outreach": "Penjangkauan",
+	"We'd like to have some budget available to attend smaller events": "Kami ingin memiliki anggaran yang tersedia untuk menghadiri acara-acara yang lebih kecil",
+	"Infrastructure": "Infrastruktur",
+	"The costs to keep Luanti running - websites and services": "Biaya untuk menjaga Luanti tetap berjalan - situs web dan layanan",
+	"*BSD": "*BSD",
+	"Install Luanti using your system package manager, or build from ports/pkgsrc.": "Instal Luanti menggunakan manajer paket sistem Anda, atau bangun dari ports/pkgsrc.",
+	"Install using:": "Instal menggunakan:",
+	"Or compile from ports at:": "Atau kompilasi dari ports di:",
+	"Or compile from pkgsrc at:": "Atau kompilasi dari pkgsrc di:",
+	"FOSDEM": "FOSDEM",
+	"Every year, we run a stand at the world's largest open source conference": "Setiap tahun, kami menjalankan stan di konferensi open source terbesar di dunia",
+	"There are over {{contentdb_mod_count}} open source mods on [ContentDB](https://content.luanti.org/), which are ready to be used, adapted or learned from.": "Ada lebih dari {{contentdb_mod_count}} mod open source di [ContentDB](https://content.luanti.org/), yang siap digunakan, diadaptasi, atau dipelajari.",
+	"Part-time dev": "Dev paruh waktu",
+	"Help us hire a developer to work on the engine part time": "Bantu kami merekrut pengembang untuk mengerjakan mesin secara paruh waktu",
+	"Other conferences and events": "Konferensi dan acara lainnya",
+	"{{value}} / {{target}} per month": "{{value}} / {{target}} per bulan"
 }
