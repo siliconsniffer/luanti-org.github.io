@@ -23,11 +23,17 @@ print:
     para: A sign to promote donations to Luanti.
     url: https://codeberg.org/luanti/fosdem_materials/src/branch/main/fosdem26/donate_sign
 
-  - title: Stickers
+  - title: Sticker
     author: erlehmann and Lemente
     img: sticker.png
     para: A Luanti sticker.
     url: https://codeberg.org/luanti/fosdem_materials/src/branch/main/fosdem24/stickers
+
+  - title: Pride sticker
+    author: erlehmann and Lemente
+    img: sticker_pride.png
+    para: A Luanti pride sticker.
+    url: https://codeberg.org/luanti/fosdem_materials/src/branch/main/fosdem26/stickers/luanti_pride_1.3_full.png
 
   - title: Education Leaflet
     author: Lemente and Thomate
